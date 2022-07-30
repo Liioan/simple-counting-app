@@ -12,6 +12,10 @@ const updateUI = userScore => {
     scoreValue.textContent = userScore;
 };
 
+const saveToLocalStorage = userScore => {
+    localStorage.setItem('userScore', JSON.stringify(userScore, userScore.value))
+};
+
 range.addEventListener('input', () => {
     rangeValue.textContent = range.value
 });
@@ -24,7 +28,7 @@ range.addEventListener('change', () => {
 addButton.addEventListener('click', () => {
     userScore += Number(userValue);
     scoreValue.textContent = userScore;
-    console.log(userScore)
+    saveToLocalStorage(userScore);
 });
 
 subButton.addEventListener('click', () => {
@@ -37,10 +41,16 @@ subButton.addEventListener('click', () => {
             updateUI(userScore);
         }
     }
+    saveToLocalStorage(userScore);
 });
 
 reset.addEventListener('click', () => {
     userScore = 0;
-
     updateUI(userScore)
+    saveToLocalStorage(userScore)
 });
+
+if(localStorage.getItem('userScore')){
+    userScore = JSON.parse(localStorage.getItem('userScore'));
+    updateUI(userScore)
+}

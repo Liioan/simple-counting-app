@@ -11,7 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background-color: #222222; 
+    background-color: #02001b; 
     color: white;
 }
 
@@ -31,7 +31,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #333333;
+    background-color: #171e35;
     border-radius: 20px;
 }
 
@@ -59,6 +59,12 @@ body{
     cursor: pointer;
     border: 3px solid #253869;
     box-shadow: -410px 0 0 400px #4c76e2;
+    transition: 0.2s ease-in-out;
+}
+
+.range::-webkit-slider-thumb:hover{
+    background-color: #56caff;
+    box-shadow: -410px 0 0 400px #56caff;
 }
 
 .card{
@@ -68,7 +74,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #333333;
+    background-color: #171e35;
     border-radius: 20px;
 }
 
@@ -83,10 +89,15 @@ button{
     height: 50px;
     border-radius: 100px;
     border: none;
-    background-color: #3f3f3f;
+    background-color: #212c50;
     color: #4c76e2;
     font-size: 2em;
     cursor: pointer;
+}
+
+button:hover{
+    background-color: #293869;
+    color: #56caff;; 
 }
 
 .reset{
